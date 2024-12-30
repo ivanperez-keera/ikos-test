@@ -6,6 +6,7 @@ class Ikos < Formula
   sha256 "8de3a74b6e595fcd72df2d7699d13d3f105b966e262d8cc7ee74bde4330dfef9"
   license "NOSA"
   revision 1
+  version 3.4
 
   depends_on "cmake" => :build
   depends_on "apron"
