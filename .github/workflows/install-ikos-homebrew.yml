@@ -23,6 +23,7 @@ jobs:
         echo "/opt/homebrew/opt/llvm@14/bin" >> $GITHUB_PATH
         echo "LDFLAGS=-L/opt/homebrew/opt/llvm@14/lib" >> $GITHUB_ENV
         echo "CPPFLAGS=-I/opt/homebrew/opt/llvm@14/include" >> $GITHUB_ENV
+        ls /opt/homebrew/opt/llvm@14/bin
         clang++-14 -c test.cpp
         # sudo xcode-select --install
         # sudo xcode-select -s /Applications/Xcode_15.4.app/
