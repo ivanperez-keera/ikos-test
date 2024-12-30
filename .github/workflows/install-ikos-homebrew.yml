@@ -37,5 +37,5 @@ jobs:
         # # echo "SDKROOT=$(xcrun --show-sdk-path)" >> $GITHUB_ENV
         # # echo "$CPATH"
         # # echo "$SDKROOT"
-        # env HOMEBREW_NO_AUTO_UPDATE=1 brew install --build-from-source ./apron.rb
-        # env HOMEBREW_NO_AUTO_UPDATE=1 brew install --build-from-source ./ikos.rb || cat /Users/runner/Library/Logs/Homebrew/ikos/04.make
+        env HOMEBREW_NO_AUTO_UPDATE=1 brew install --build-from-source ./apron.rb
+        env HOMEBREW_NO_AUTO_UPDATE=1 brew install --build-from-source ./ikos.rb || cat /Users/runner/Library/Logs/Homebrew/ikos/04.make
