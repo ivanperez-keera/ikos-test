@@ -14,4 +14,4 @@ jobs:
         brew update --preinstall
     - name: Install Homebrew dependencies
       run: |
-        env HOMEBREW_NO_AUTO_UPDATE=1 brew install --build-from-source ./ikos.rb
+        env HOMEBREW_NO_AUTO_UPDATE=1 brew install --devel --build-from-source ./ikos.rb
