@@ -18,6 +18,7 @@ jobs:
         brew update --preinstall
     - name: Install Homebrew dependencies
       run: |
+        env HOMEBREW_NO_AUTO_UPDATE=1 brew install llvm@14
         clang++-14 -c test.cpp
         # sudo xcode-select --install
         # sudo xcode-select -s /Applications/Xcode_15.4.app/
