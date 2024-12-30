@@ -9,6 +9,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Pick source tools
+      run: |
+        xcode-select -s /Library/Developer/CommandLineTools
     - name: Update Homebrew
       run: |
         brew update --preinstall
