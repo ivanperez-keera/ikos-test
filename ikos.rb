@@ -39,6 +39,7 @@ class Ikos < Formula
              "-G", "Unix Makefiles",
              "-DCMAKE_BUILD_TYPE=Release",
              "-DCMAKE_INSTALL_PREFIX=#{prefix}",
+             "-DCLANG_EXECUTABLE=/opt/homebrew/opt/llvm@14/bin/clang",
              "-DGMP_ROOT=#{Formula["gmp"].opt_prefix}",
              "-DMPFR_ROOT=#{Formula["mpfr"].opt_prefix}",
              "-DPPL_ROOT=#{Formula["ppl"].opt_prefix}",
