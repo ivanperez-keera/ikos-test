@@ -8,9 +8,10 @@ jobs:
     runs-on: macos-latest
 
     steps:
+    - uses: actions/checkout@v4
     - name: Update Homebrew
       run: |
         brew update --preinstall
     - name: Install Homebrew dependencies
       run: |
-        env HOMEBREW_NO_AUTO_UPDATE=1 brew install nasa-sw-vnv/core/ikos
+        env HOMEBREW_NO_AUTO_UPDATE=1 brew install --build-from-source ./ikos.rb
