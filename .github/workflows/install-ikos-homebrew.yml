@@ -2,6 +2,10 @@ name: Check IKOS on mac
 
 on: [push, pull_request]
 
+env:
+  DEVELOPER_DIR: /Applications/Xcode_15.4.app/Contents/Developer
+
+
 jobs:
   Install:
 
@@ -19,7 +23,5 @@ jobs:
         echo "SDKROOT=$(xcrun --show-sdk-path)" >> $GITHUB_ENV
         echo "$CPATH"
         echo "$SDKROOT"
-        find /Applications -iname 'stdint.h'
-        find /Library/Developer/CommandLineTools/ -iname 'stdint.h'
         env HOMEBREW_NO_AUTO_UPDATE=1 brew install --build-from-source ./apron.rb
         env HOMEBREW_NO_AUTO_UPDATE=1 brew install --build-from-source ./ikos.rb || cat /Users/runner/Library/Logs/Homebrew/ikos/04.make
