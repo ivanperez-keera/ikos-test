@@ -13,9 +13,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Update Homebrew
-      run: |
-        brew update --preinstall
+      # - name: Update Homebrew
+      #   run: |
+      #     brew update --preinstall
     - name: Install Homebrew dependencies
       run: |
         g++ -c test.cpp
