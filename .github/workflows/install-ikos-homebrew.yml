@@ -13,12 +13,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-      # - name: Update Homebrew
-      #   run: |
-      #     brew update --preinstall
+    - name: Update Homebrew
+      run: |
+        brew update --preinstall
     - name: Install Homebrew dependencies
       run: |
-        g++ -c test.cpp
+        clang++-14 -c test.cpp
         # sudo xcode-select --install
         # sudo xcode-select -s /Applications/Xcode_15.4.app/
         # # echo "CPATH=$(xcrun --show-sdk-path)/usr/include" >> $GITHUB_ENV
