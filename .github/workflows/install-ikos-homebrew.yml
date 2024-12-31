@@ -29,8 +29,8 @@ jobs:
         echo "LDFLAGS=-L/opt/homebrew/opt/llvm@14/lib" >> $GITHUB_ENV
         echo "CFLAGS=--verbose -I$(xcrun --show-sdk-path)/usr/include -I/opt/homebrew/opt/llvm@14/include" >> $GITHUB_ENV
         echo "CPPFLAGS=--verbose -I$(xcrun --show-sdk-path)/usr/include -I/opt/homebrew/opt/llvm@14/include" >> $GITHUB_ENV
-        echo "CMAKE_INCLUDE_PATH=$(xcrun --show-sdk-path)/usr/include:/opt/homebrew/opt/llvm@14/include" >> $GITHUB_ENV
-        echo "CMAKE_LIBRARY_PATH=$(xcrun --show-sdk-path)/usr/lib:/opt/homebrew/opt/llvm@14/lib:/opt/homebrew/opt/llvm@14/lib/c++" >> $GITHUB_ENV
+        echo "CMAKE_INCLUDE_PATH=$(xcrun --show-sdk-path)/usr/include;/opt/homebrew/opt/llvm@14/include" >> $GITHUB_ENV
+        echo "CMAKE_LIBRARY_PATH=$(xcrun --show-sdk-path)/usr/lib;/opt/homebrew/opt/llvm@14/lib;/opt/homebrew/opt/llvm@14/lib/c++" >> $GITHUB_ENV
         echo "CPATH=$(xcrun --show-sdk-path)/usr/include" >> $GITHUB_ENV
         echo "SDKROOT=$(xcrun --show-sdk-path)" >> $GITHUB_ENV
         echo "/opt/homebrew/opt/llvm@14/bin" >> $GITHUB_PATH
