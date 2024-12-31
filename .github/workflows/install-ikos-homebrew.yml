@@ -9,10 +9,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: What xcode are you using
-      run: |
-        xcode-select -p
-        echo "HOMEBREW_SDKROOT=$(xcrun --show-sdk-path --sdk macosx)" >> $GITHUB_ENV
     - name: Update Homebrew
       run: |
         brew update --preinstall
