@@ -2,10 +2,6 @@ name: Check IKOS on mac
 
 on: [push, pull_request]
 
-env:
-  DEVELOPER_DIR: /Applications/Xcode_15.4.app/Contents/Developer
-
-
 jobs:
   Install:
 
