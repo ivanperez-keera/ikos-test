@@ -27,7 +27,7 @@ class Ikos < Formula
 
     ENV["HOMEBREW_SDKROOT"] = MacOS.sdk_path if OS.mac?
 
-    echo ENV["HOMEBREW_SDKROOT"]
+    system "echo", ENV["HOMEBREW_SDKROOT"]
 
     # "/Applications/Xcode_15.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk"
 
