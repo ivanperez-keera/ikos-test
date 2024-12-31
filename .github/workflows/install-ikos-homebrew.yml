@@ -35,10 +35,6 @@ jobs:
         env HOMEBREW_NO_AUTO_UPDATE=1 brew install llvm@14
     - name: Show variables
       run: |
-        echo "CPP Flags are"
-        echo "${{ env.CPPFLAGS }}"
-        echo "End of echo"
-        pwd
         env HOMEBREW_NO_AUTO_UPDATE=1 brew install --build-from-source ./apron.rb
         env HOMEBREW_NO_AUTO_UPDATE=1 brew install --build-from-source ./ikos.rb || cat /Users/runner/Library/Logs/Homebrew/ikos/07.make
     - name: Test IKOS
