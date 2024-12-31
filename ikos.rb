@@ -25,7 +25,7 @@ class Ikos < Formula
 
   def install
 
-    ENV["HOMEBREW_SDKROOT"] = MacOS.sdk_path if OS.mac?
+    ENV["HOMEBREW_SDKROOT"] = system "xcrun", "--show-sdk-path", "--sdk", "macosx"
 
     system "echo", ENV["HOMEBREW_SDKROOT"]
 
