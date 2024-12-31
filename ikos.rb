@@ -3,10 +3,10 @@ class Ikos < Formula
   desc "Static analyzer for C/C++ based on the theory of Abstract Interpretation"
   homepage "https://github.com/nasa-sw-vnv/ikos"
   url "https://github.com/NASA-SW-VnV/ikos/archive/refs/heads/master.tar.gz"
-  sha256 "8de3a74b6e595fcd72df2d7699d13d3f105b966e262d8cc7ee74bde4330dfef9"
+  sha256 "c9d936c0f226fef45d337227ada008ae6a75805f01c0bbcd26f56f582c8f007e"
   license "NOSA"
   revision 1
-  version "3.4"
+  version "3.5"
 
   depends_on "cmake" => :build
   depends_on "apron"
