@@ -39,7 +39,7 @@ class Ikos < Formula
              "-###"
       system "/opt/homebrew/opt/llvm@14/bin/clang++",
              "-c",
-             "test.cpp",
+             "/Users/runner/work/ikos-test/ikos-test/test.cpp",
              "-v"
       system "cmake",
              "-G", "Unix Makefiles",
