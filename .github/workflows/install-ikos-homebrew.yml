@@ -15,7 +15,7 @@ jobs:
     - name: Install IKOS and dependencies
       run: |
         env HOMEBREW_NO_AUTO_UPDATE=1 brew install --build-from-source ./apron.rb
-        env HOMEBREW_NO_AUTO_UPDATE=1 brew install --build-from-source ./ikos.rb || cat /Users/runner/Library/Logs/Homebrew/ikos/07.make
+        env HOMEBREW_NO_AUTO_UPDATE=1 brew install --build-from-source ./ikos.rb || cat /Users/runner/Library/Logs/Homebrew/ikos/04.make
     - name: Test IKOS
       run: |
         ikos --version
