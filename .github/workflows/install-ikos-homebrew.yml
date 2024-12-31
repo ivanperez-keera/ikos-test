@@ -41,4 +41,4 @@ jobs:
         echo "End of echo"
         pwd
         env HOMEBREW_NO_AUTO_UPDATE=1 brew install --build-from-source ./apron.rb
-        env HOMEBREW_NO_AUTO_UPDATE=1 brew install --build-from-source ./ikos.rb || cat /Users/runner/Library/Logs/Homebrew/ikos/04.clang++
+        env HOMEBREW_NO_AUTO_UPDATE=1 brew install --build-from-source ./ikos.rb || cat /Users/runner/Library/Logs/Homebrew/ikos/04.clang++ /Users/runner/Library/Logs/Homebrew/ikos/06.make
