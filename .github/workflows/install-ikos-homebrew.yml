@@ -16,9 +16,6 @@ jobs:
     - name: Update Homebrew
       run: |
         brew update --preinstall
-    - name: Install LLVM
-      run: |
-        env HOMEBREW_NO_AUTO_UPDATE=1 brew install llvm@14
     - name: Show variables
       run: |
         env HOMEBREW_NO_AUTO_UPDATE=1 brew install --build-from-source ./apron.rb
