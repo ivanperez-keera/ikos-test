@@ -25,6 +25,7 @@ class Ikos < Formula
 
   def install
     ENV["SDKROOT"] = "/Applications/Xcode_15.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk"
+    ENV["HOMEBREW_SDKROOT"] = "/Applications/Xcode_15.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk"
     venv = virtualenv_create(libexec, "python3")
     venv.pip_install resources
 
