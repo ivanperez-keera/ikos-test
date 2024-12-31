@@ -2,8 +2,8 @@ name: Check IKOS on mac
 
 on: [push, pull_request]
 
-  # env:
-  #   DEVELOPER_DIR: /Applications/Xcode_15.4.app/Contents/Developer
+env:
+  DEVELOPER_DIR: /Applications/Xcode_15.4.app/Contents/Developer
 
 
 jobs:
@@ -21,7 +21,6 @@ jobs:
         brew update --preinstall
     - name: Install Homebrew dependencies
       run: |
-        env HOMEBREW_NO_AUTO_UPDATE=1 brew install llvm@14
         echo "Printing all stdints in the SDK PATH"
         find $(xcrun --show-sdk-path)/usr/include -iname 'stdint.h'
         echo "End of Printing all stdints in the SDK PATH"
@@ -32,18 +31,14 @@ jobs:
         echo "CMAKE_INCLUDE_PATH=$(xcrun --show-sdk-path)/usr/include;/opt/homebrew/opt/llvm@14/include" >> $GITHUB_ENV
         echo "CMAKE_LIBRARY_PATH=$(xcrun --show-sdk-path)/usr/lib;/opt/homebrew/opt/llvm@14/lib;/opt/homebrew/opt/llvm@14/lib/c++" >> $GITHUB_ENV
         echo "CPATH=$(xcrun --show-sdk-path)/usr/include" >> $GITHUB_ENV
-        echo "SDKROOT=$(xcrun --show-sdk-path)" >> $GITHUB_ENV
+        echo "SDKROOT=$(xcrun --show-sdk-path --sdk macosx)" >> $GITHUB_ENV
         echo "/opt/homebrew/opt/llvm@14/bin" >> $GITHUB_PATH
+        env HOMEBREW_NO_AUTO_UPDATE=1 brew install llvm@14
     - name: Show variables
       run: |
         echo "CPP Flags are"
         echo "${{ env.CPPFLAGS }}"
         echo "End of echo"
         pwd
-        # sudo xcode-select -s /Applications/Xcode_15.4.app/
-        # # echo "CPATH=$(xcrun --show-sdk-path)/usr/include" >> $GITHUB_ENV
-        # # echo "SDKROOT=$(xcrun --show-sdk-path)" >> $GITHUB_ENV
-        # # echo "$CPATH"
-        # # echo "$SDKROOT"
         env HOMEBREW_NO_AUTO_UPDATE=1 brew install --build-from-source ./apron.rb
         env HOMEBREW_NO_AUTO_UPDATE=1 brew install --build-from-source ./ikos.rb || cat /Users/runner/Library/Logs/Homebrew/ikos/04.clang++
