@@ -18,9 +18,6 @@ jobs:
         brew update --preinstall
     - name: Install Homebrew dependencies
       run: |
-        echo "Printing all stdints in the SDK PATH"
-        find $(xcrun --show-sdk-path)/usr/include -iname 'stdint.h'
-        echo "End of Printing all stdints in the SDK PATH"
         echo 'LDFLAGS="-L/opt/homebrew/opt/llvm@14/lib/c++ -Wl,-rpath,/opt/homebrew/opt/llvm@14/lib/c++"' >> $GITHUB_ENV
         echo "LDFLAGS=-L/opt/homebrew/opt/llvm@14/lib" >> $GITHUB_ENV
         echo "CFLAGS=--verbose -I$(xcrun --show-sdk-path)/usr/include -I/opt/homebrew/opt/llvm@14/include" >> $GITHUB_ENV
