@@ -35,6 +35,8 @@ class Ikos < Formula
     # virtualenv in libexec (the one created by this formula). We also adjust
     # python to point to the python executable in that virtualenv.
     mkdir "build" do
+      system "/opt/homebrew/opt/llvm@14/bin/clang-14",
+             "-###"
       system "/opt/homebrew/opt/llvm@14/bin/clang++",
              "-c",
              "test.cpp",

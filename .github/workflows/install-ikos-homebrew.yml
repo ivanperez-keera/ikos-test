@@ -34,6 +34,7 @@ jobs:
         echo "CPP Flags are"
         echo "${{ env.CPPFLAGS }}"
         echo "End of echo"
+        pwd
         # sudo xcode-select -s /Applications/Xcode_15.4.app/
         # # echo "CPATH=$(xcrun --show-sdk-path)/usr/include" >> $GITHUB_ENV
         # # echo "SDKROOT=$(xcrun --show-sdk-path)" >> $GITHUB_ENV
