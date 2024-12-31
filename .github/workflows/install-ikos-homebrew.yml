@@ -24,7 +24,8 @@ jobs:
         env HOMEBREW_NO_AUTO_UPDATE=1 brew install llvm@14
         echo 'LDFLAGS="-L/opt/homebrew/opt/llvm@14/lib/c++ -Wl,-rpath,/opt/homebrew/opt/llvm@14/lib/c++"' >> $GITHUB_ENV
         echo "LDFLAGS=-L/opt/homebrew/opt/llvm@14/lib" >> $GITHUB_ENV
-        echo "CPPFLAGS=-I$(xcrun --show-sdk-path)/usr/include -I/opt/homebrew/opt/llvm@14/include" >> $GITHUB_ENV
+        echo "CFLAGS=--verbose -I$(xcrun --show-sdk-path)/usr/include -I/opt/homebrew/opt/llvm@14/include" >> $GITHUB_ENV
+        echo "CPPFLAGS=--verbose -I$(xcrun --show-sdk-path)/usr/include -I/opt/homebrew/opt/llvm@14/include" >> $GITHUB_ENV
         echo "CPATH=$(xcrun --show-sdk-path)/usr/include" >> $GITHUB_ENV
         echo "SDKROOT=$(xcrun --show-sdk-path)" >> $GITHUB_ENV
         echo "/opt/homebrew/opt/llvm@14/bin" >> $GITHUB_PATH
