@@ -38,7 +38,6 @@ class Ikos < Formula
     mkdir "build" do
       system "cat",
              "/opt/homebrew/opt/llvm@14/include/llvm/Pass.h"
-
       system "/opt/homebrew/opt/llvm@14/bin/clang-14",
              "-###"
       system "/opt/homebrew/opt/llvm@14/bin/clang++",
