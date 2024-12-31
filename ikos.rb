@@ -37,14 +37,6 @@ class Ikos < Formula
     # virtualenv in libexec (the one created by this formula). We also adjust
     # python to point to the python executable in that virtualenv.
     mkdir "build" do
-      system "cat",
-             "/opt/homebrew/opt/llvm@14/include/llvm/Pass.h"
-      system "/opt/homebrew/opt/llvm@14/bin/clang-14",
-             "-###"
-      system "/opt/homebrew/opt/llvm@14/bin/clang++",
-             "-c",
-             "/Users/runner/work/ikos-test/ikos-test/test.cpp",
-             "-v"
       system "cmake",
              "-G", "Unix Makefiles",
              "-DCMAKE_BUILD_TYPE=Release",
