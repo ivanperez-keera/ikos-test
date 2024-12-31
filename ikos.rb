@@ -39,8 +39,6 @@ class Ikos < Formula
       system "/opt/homebrew/opt/llvm@14/bin/clang-14",
              "-###"
       system "/opt/homebrew/opt/llvm@14/bin/clang++",
-             "-internal-isystem",
-             "/Applications/Xcode_15.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include",
              "-c",
              "/Users/runner/work/ikos-test/ikos-test/test.cpp",
              "-v"
