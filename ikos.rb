@@ -41,8 +41,6 @@ class Ikos < Formula
              "-G", "Unix Makefiles",
              "-DCMAKE_BUILD_TYPE=Release",
              "-DCMAKE_INSTALL_PREFIX=#{prefix}",
-             "-DCMAKE_INCLUDE_PATH=/Applications/Xcode_15.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1:/Applications/Xcode_15.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include",
-             "-DCLANG_EXECUTABLE=/opt/homebrew/opt/llvm@14/bin/clang",
              "-DGMP_ROOT=#{Formula["gmp"].opt_prefix}",
              "-DMPFR_ROOT=#{Formula["mpfr"].opt_prefix}",
              "-DPPL_ROOT=#{Formula["ppl"].opt_prefix}",
