@@ -49,13 +49,11 @@ class Ikos < Formula
              "-DAPRON_ROOT=#{Formula["apron"].opt_prefix}",
              "-DCUSTOM_BOOST_ROOT=#{Formula["boost"].opt_prefix}",
              "-DPYTHON_EXECUTABLE=#{libexec}/bin/python",
-             "-DLLVM_CONFIG_EXECUTABLE=/opt/homebrew/opt/llvm@14/bin/llvm-config",
+             "-DLLVM_CONFIG_EXECUTABLE=#{Formula["llvm@14"].opt_prefix}/bin/llvm-config",
              "-DINSTALL_PYTHON_VIRTUALENV=OFF",
              "-DPYTHON_VENV_EXECUTABLE=#{libexec}/bin/python",
              ".."
       system "make", "install"
-
-      # "-DLLVM_CONFIG_EXECUTABLE=#{Formula["llvm@14"].opt_prefix}/bin/llvm-config",
 
       # We specifically install the ikos python package in the virtualenv.
       chdir "analyzer/python" do
